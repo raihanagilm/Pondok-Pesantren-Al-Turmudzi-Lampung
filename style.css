@@ -1,0 +1,217 @@
+/* Reset CSS */
+body, h1, h2, h3, h4, h5, h6, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    overflow-x: hidden; /* Menghapus scroll bar horizontal */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2d6a4f;
+    color: white;
+    padding: 15px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Agar logo dan teks sejajar */
+    gap: 10px; /* Jarak antara gambar dan teks */
+    font-size: 30px; /* Ukuran default untuk desktop */
+    font-weight: bold;
+    color: #ffffff; /* Sesuaikan dengan warna tema */
+}
+
+/* Jika layar kurang dari 768px (mobile), ukuran font dikurangi 50% */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 15px; /* Mengurangi 50% dari ukuran desktop */
+    }
+}
+
+/* Ukuran gambar */
+.logo-img {
+    width: 80px; /* Ukuran default untuk desktop */
+    height: 80px;
+    object-fit: contain; /* Pastikan gambar tidak terdistorsi */
+}
+
+/* Jika layar kurang dari 768px (mobile), ukuran gambar dikurangi 50% */
+@media (max-width: 768px) {
+    .logo-img {
+        width: 60px; /* 50% lebih kecil dari ukuran desktop */
+        height: 60px;
+    }
+}
+
+
+
+/* Agar teks tetap rapi */
+.logo-text {
+    display: flex;
+    flex-direction: column; /* Membuat teks tersusun secara vertikal */
+    line-height: 1.2;
+}
+
+
+/* MENU DESKTOP */
+.desktop-menu {
+    position: relative;
+}
+
+.desktop-menu ul {
+    display: flex;
+    padding: 0;
+}
+
+.desktop-menu ul li {
+    position: relative;
+    margin: 0 15px;
+    padding: 10px;
+}
+
+.desktop-menu ul li a {
+    color: white;
+    padding: 10px;
+    display: block;
+    font-size: 16px;
+}
+
+/* Submenu (Desktop: Mengambang) */
+.desktop-menu .submenu .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    padding: 10px;
+    list-style: none;
+    min-width: 220px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.desktop-menu .submenu .sub-menu li {
+    padding: 8px;
+}
+
+.desktop-menu .submenu .sub-menu li a {
+    color: #2d6a4f;
+    display: block;
+    font-size: 14px;
+}
+
+/* Menampilkan submenu saat diklik */
+.desktop-menu .submenu.active .sub-menu {
+    display: block;
+}
+
+/* MENU MOBILE */
+.hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Sidebar Menu (Mobile) */
+#mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    padding-top: 20px;
+    z-index: 999;
+}
+
+/* Aktifkan menu mobile */
+#mobile-menu.active {
+    right: 0;
+}
+
+/* Tombol close di dalam menu, pojok kanan atas */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    color: black;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Daftar menu */
+nav ul {
+    padding: 0;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+nav ul li a {
+    color: #2d6a4f;
+    display: block;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+/* Submenu (Mobile: Tersusun ke bawah) */
+#mobile-menu .submenu .sub-menu {
+    display: none;
+    padding-left: 15px;
+}
+
+#mobile-menu .submenu.open .sub-menu {
+    display: block;
+}
+
+/* Reset submenu saat menutup menu */
+#mobile-menu .submenu .sub-menu li {
+    padding: 10px;
+}
+
+/* Kontak */
+.contact-info {
+    padding: 15px;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+    background: #f8f9fa;
+}
+
+/* FOOTER */
+footer {
+    background: #2d6a4f;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto; /* Agar footer tetap di bawah */
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+}
