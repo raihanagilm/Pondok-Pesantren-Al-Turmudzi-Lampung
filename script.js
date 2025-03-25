@@ -13,6 +13,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Fungsi untuk menandai menu yang aktif
+document.addEventListener("DOMContentLoaded", function () {
+    // Ambil URL saat ini
+    let currentPage = window.location.pathname.split("/").pop();
+
+    // Ambil semua link menu
+    let menuLinks = document.querySelectorAll("nav a");
+
+    // Loop untuk menandai menu aktif
+    menuLinks.forEach(function (link) {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        }
+    });
+});
+
     // Fungsi Toggle Submenu (Mobile)
     function toggleSubMenu(event) {
         event.preventDefault();
